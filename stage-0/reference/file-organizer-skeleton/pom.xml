@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.deepcraft</groupId>
-    <artifactId>stage0-reference</artifactId>
+    <artifactId>file-organizer</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -14,7 +14,6 @@
     </properties>
 
     <dependencies>
-        <!-- Day 11：JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -25,30 +24,23 @@
 
     <build>
         <plugins>
-            <!-- Day 9 需要 switch 模式匹配（JDK 17 预览特性），模块级开启 --enable-preview。
-                 注意：开启后本模块所有 class 运行时都需要 --enable-preview 参数。 -->
+            <!-- 打出可运行 jar：java -jar target/file-organizer-1.0-SNAPSHOT.jar <目录> [--dry-run] -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.1</version>
                 <configuration>
-                    <compilerArgs>
-                        <arg>--enable-preview</arg>
-                    </compilerArgs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.deepcraft.organizer.Main</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
-                <configuration>
-                    <argLine>--enable-preview</argLine>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
             </plugin>
         </plugins>
     </build>
