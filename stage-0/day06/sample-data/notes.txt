@@ -1,0 +1,3 @@
+Java 异常体系
+checked：编译器强制处理，如 IOException
+unchecked：运行时才出现，如 NullPointerException
