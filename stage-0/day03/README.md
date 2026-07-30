@@ -12,6 +12,7 @@ java StringDemo
 
 - `javac -encoding UTF-8`：Windows 中文环境下 javac 默认按 GBK 读源码，文件是 UTF-8，必须显式指定编码
 - `java StringDemo`：`java` 后跟**类名**，不带 `.\`、不带 `.class`
+- 若控制台输出中文乱码：运行时加 `-Dfile.encoding=UTF-8`（控制台是 GBK，让 JVM 按 UTF-8 输出），即 `java -Dfile.encoding=UTF-8 StringDemo`；或先执行 `chcp 65001` 把控制台切到 UTF-8
 
 ## 演示内容
 

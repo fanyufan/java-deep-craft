@@ -10,6 +10,8 @@ javac -encoding UTF-8 CollectionDemo.java
 java CollectionDemo
 ```
 
+若控制台输出中文乱码：运行时加 `-Dfile.encoding=UTF-8`（控制台是 GBK，让 JVM 按 UTF-8 输出），即 `java -Dfile.encoding=UTF-8 CollectionDemo`；或先执行 `chcp 65001` 把控制台切到 UTF-8。
+
 ## Checklist
 
 - [x] `List` / `Set` / `Map` 常用实现类的使用场景
