@@ -1,6 +1,9 @@
 # 自己新增加
 .agents
 
+# Maven 构建产物
+target/
+
 # Java 默认的模板
 # Compiled class file
 *.class
